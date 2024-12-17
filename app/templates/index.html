@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET ANSWERS @CODEWHY</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Upload a PDF File</h1>
+        <p>Feeling overwhelmed with multiple questions? Let us handle it smartly.</p>
+        
+        
+            <p>Get multiple answers without lifting a finger. We're here to simplify your work!</p>
+       
+        
+        <img src="https://images-ext-1.discordapp.net/external/Py6lpKlIL1u8Tf09cVX-E92Q_kYP7AhDxvol3nZKIFA/https/www.qoppa.com/wp-content/uploads/PDF-to-PDFA-Icon-3-e1651614599434.png?format=webp&quality=lossless&width=1018&height=537" alt="Descriptive Image" class="responsive-image">
+        
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="pdf_file" accept=".pdf" required>
+            <div class="button-container">
+                <button type="submit">Upload</button>
+            </div>
+        </form>
+
+        {% if pdf_link %}
+        <h2>Your PDF is ready:</h2>
+        <a href="{{ url_for('main.upload_file', filename='output.pdf') }}">Click here to download the PDF</a>
+        {% endif %}
+    </div>
+</body>
+</html>
